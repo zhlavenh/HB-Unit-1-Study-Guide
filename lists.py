@@ -330,7 +330,10 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
-    # items[::-1]
+
+    items = items[::-1]
+
+    return items
 
 
 
@@ -356,8 +359,16 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
+    
+    list_items = sorted(items)
+    dup_list = []
 
-    return []
+    for index in range(len(list_items) - 1):
+        if (list_items[index] == list_items[index + 1]) and (list_items[index] not in dup_list):
+            dup_list.append(list_items[index])
+        
+    return sorted(dup_list)
+
 
 
 def find_letter_indices(words, letter):
@@ -385,7 +396,18 @@ def find_letter_indices(words, letter):
     `None`.)
     """
 
-    return []
+    index_word = []
+
+    for word in words:
+        if "o" in word:
+            for index, char in enumerate(word):
+                if char == letter:
+                    index_word.append(index)
+        else:
+            index_word.append(None)
+
+
+    return index_word
 
 
 #####################################################################
