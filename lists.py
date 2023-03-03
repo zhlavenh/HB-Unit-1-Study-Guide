@@ -331,9 +331,8 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    items = items[::-1]
-
-    return items
+    return(items[::-1])
+ 
 
 
 
